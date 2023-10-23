@@ -18,8 +18,6 @@ class DramatiqConfig(AppConfig):
         """
         Initialise our Broker when Django is ready.
         """
-        from . import signals  # NOQA
-
         encoder = self.get_encoder()
         if encoder:
             dramatiq.set_encoder(encoder())

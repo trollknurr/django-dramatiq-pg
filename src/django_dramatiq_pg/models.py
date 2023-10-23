@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class BackgroundJob(models.Model):
+class PgDramatiqTask(models.Model):
     class STATE(models.TextChoices):
         QUEUED = "queued"
         CONSUMED = "consumed"
@@ -19,5 +19,5 @@ class BackgroundJob(models.Model):
 
     class Meta:
         managed = False
-        db_table = "queue"
+        db_table = "dramatiq_queue"
         indexes = (models.Index(fields=["state", "mtime"]),)

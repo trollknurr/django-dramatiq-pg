@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import BackgroundJob
+from .models import PgDramatiqTask
 
 
 class ActorFilter(admin.SimpleListFilter):
@@ -19,7 +19,7 @@ class ActorFilter(admin.SimpleListFilter):
         return queryset.filter(**{self.lookup: value})
 
 
-@admin.register(BackgroundJob)
+@admin.register(PgDramatiqTask)
 class BackgroundJobAdmin(admin.ModelAdmin):
     list_display = (
         "message_id",
